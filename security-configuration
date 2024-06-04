@@ -1,11 +1,6 @@
 { pkgs, config, ... }:
 
 {
-  
-  # Network & Firewall
-  networking.firewall.enable = true;
-  networking.firewall.allowedTCPPorts = [];
-  networking.firewall.allowedUDPPorts = [];
 
   # enable antivirus clamav and
   # keep the signatures' database updated
