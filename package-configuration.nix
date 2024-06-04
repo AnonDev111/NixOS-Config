@@ -1,4 +1,5 @@
 { pkgs, config, ... }
+
 {
   environment.systemPackages = with pkgs; [
     htop
@@ -27,7 +28,6 @@
     mangohud
     flatpak
   ];
-  nixpkgs. config = {
-    allowUnfree = true;
-  };
+
+
 }
