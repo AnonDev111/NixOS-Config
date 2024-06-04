@@ -1,7 +1,9 @@
 { inputs, outputs, lib, config, pkgs, ... }: {
 
   imports = [
-
+    ./package-configuration.nix
+    ./system-configuration.nix
+    ./security-configuration.nix
   ];
 
   
