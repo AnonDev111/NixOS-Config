@@ -1,14 +1,16 @@
 { pkgs, config, ... }:
 
 {
+  # Use the hardened linux kernel
+  boot.kernelPackages = mkDefault pkgs.linuxPackages_hardened;
+
+  # Disable coredump which could be exploited later and slows down the system when something crashes
+  systemd.coredump.enable = false;
 
   # enable antivirus clamav and
   # keep the signatures' database updated
   services.clamav.daemon.enable = true;
   services.clamav.updater.enable = true;
-  
-  # Disable coredump which could be exploited later and slows down the system when something crashes
-  systemd.coredump.enable = false;
 
   # required to run chromium
   security.chromiumSuidSandbox.enable = true;
