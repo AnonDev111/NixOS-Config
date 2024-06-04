@@ -4,6 +4,7 @@
     ./package-configuration.nix
     ./system-configuration.nix
     ./security-configuration.nix
+    ./firewall-configuration.nix
   ];
 
   
