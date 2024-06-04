@@ -1,6 +1,9 @@
 { inputs, outputs, lib, config, pkgs, ... }: {
 
   imports = [
+    # this config file should be generated for you, not a good idea to edit its contents or filename
+    ./hardware-configuration.nix
+
     ./package-configuration.nix
     ./system-configuration.nix
     ./security-configuration.nix
