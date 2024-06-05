@@ -8,6 +8,7 @@
     ./system-configuration.nix
     ./security-configuration.nix
     ./firewall-configuration.nix
+    ./processor-config.nix
   ];
 
   
