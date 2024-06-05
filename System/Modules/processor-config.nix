@@ -4,7 +4,7 @@
 {
 
   services.xserver.videoDrivers = [ "nvidia" ];
-  
+
   hardware = {
     opengl.enable = true;
     driSupport = true;
@@ -13,6 +13,10 @@
     bluetooth.enable = true;
 
     nvidia.modesetting.enable = true;
+
+    # Get the latest drivers (beta)
+    nvidia.package = config.boot.kernelPackages.nvidiaPackages.beta;
+
     # Sync mode = hardware is on at all times
     # Offload mode = hardware is on when needed
     # To enable offload on games, run "nvidia-offload some-game / %command%"
