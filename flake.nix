@@ -2,6 +2,7 @@
 
   description = "Flake";
 
+
   inputs = {
     nixpkgs = {
       url = "github:NixOS/nixpkgs/nixos-23.11";
@@ -12,20 +13,26 @@
     };
   };
 
-  outputs = {self, nixpkgs, }:
+
+  outputs = {self, nixpkgs, home-manager, ...}:
   let 
     lib = nixpkgs.lib;
+    system = "x86_64-linux"
+    pkgs = nixpkgs.legacyPackages.${system};
   in {
+
     nixosConfigurations = {
       your-hostname = lib.nixosSystem {
-        system = "x86_64-linux";
-        modules = [
-          ./configuration.nix
-        ];
-
+        inherit system;
+        modules = [ ./configuration.nix ];
       };
     };
 
-  };
+    homeConfigurations = {
+      username = home-manager.lib.homeManagerConfiguration {
+        inherit pkgs;
+        modules = [ ./home.nix ];
+      };
+    };
 
 }
