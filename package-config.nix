@@ -4,20 +4,19 @@
   environment.systemPackages = with pkgs; [
     htop
     neofetch
-    git
-    zsh
-    eww
-    dunst
     lib
     libnotify
-    swww
-    kitty
-    rofi-wayland
-    vim
+    git
     wget
+    alacritty
+    waybar
+    rofi-wayland
+    hyprland
+    swww
+    dunst
+    vim
     firefox
     libreoffice
-    hyprland
     clamav
     rkhunter
     mkpasswd
